@@ -213,6 +213,24 @@ nav.show{display:block}nav ul{flex-direction:column;gap:2px}nav li>a{display:blo
 .dt{width:100%;height:auto;justify-content:flex-start;text-align:start;font-weight:800;opacity:1;cursor:default;padding:12px 6px}
 .dm{position:static;display:block;background:transparent;border:0;box-shadow:none;padding:0 10px 8px;min-width:0}
 .dm small{color:var(--gold2);padding:0 8px 4px}.dm a{color:#fff;opacity:.92;padding:8px}.dm a:hover{background:#ffffff1a}}
+
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{font:inherit;cursor:pointer;padding:8px 16px;border-radius:999px;border:1.5px solid #ffffff55;background:transparent;color:#fff}
+.seg button.on{background:var(--gold2);color:#2b2140;border-color:var(--gold2);font-weight:800}
+.sl{margin:14px 0 6px;font-weight:700}
+.chip{display:inline-block;padding:2px 12px;border-radius:999px;font-size:.8rem;font-weight:800;color:#1e1b3e;margin-inline-start:8px}
+.tb{height:9px;border-radius:9px;background:#ffffff26;overflow:hidden;margin:10px 0}
+.tb i{display:block;height:100%;width:100%;background:var(--gold2);transition:width .25s linear}
+.ai{width:100%;padding:12px 16px;border-radius:12px;border:1.5px solid #ffffff55;background:#ffffff14;color:#fff;font:inherit;font-size:1.05rem;margin:10px 0}
+.hint{background:#ffffff16;border-radius:12px;padding:8px 14px;margin:8px 0;font-size:.95rem}
+.kc.new{animation:claim .6s}
+@keyframes claim{0%{transform:scale(.4);opacity:.3}60%{transform:scale(1.18)}100%{transform:scale(1)}}
+.cf{position:fixed;inset:0;pointer-events:none;z-index:90;overflow:hidden}
+.cf i{position:absolute;top:-16px;width:9px;height:15px;animation:fall 3s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+.lbody{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 140'%3E%3Ccircle cx='50' cy='45' r='26' fill='white' fill-opacity='.08'/%3E%3Cpath d='M38 60h24l8 60H30z' fill='white' fill-opacity='.08'/%3E%3C/svg%3E") center/46% no-repeat,linear-gradient(160deg,#3b2f52,#1e1b3e)}
+.lg{font-size:.88rem;opacity:.9;text-align:center;margin:0}
+.lg i{display:inline-block;width:11px;height:11px;border-radius:50%;margin:0 4px 0 6px;vertical-align:middle}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-iteration-count:1!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -523,55 +541,113 @@ $("#cn").oninput=certUp;acRender();
 function route(){const h=location.hash.slice(1),ac=h==="academy";$("#top").hidden=ac;$("#academy").hidden=!ac;if(ac){scrollTo(0,0)}else if(h&&h!=="top"){setTimeout(()=>{const e=document.getElementById(h);e&&e.scrollIntoView()},30)}else scrollTo(0,0)}
 addEventListener("hashchange",route);route();
 /* قفل صون */
-const LK=[
-["أ","ما اسم الأسلوب الذي يكسب فيه المخادع ثقة المراهق ثم يعزله عن أسرته؟","استدراج",""],
-["ب","ما الفعل المسؤول الذي نقوم به عند رؤية محتوى مخالف بدلاً من نشره؟","بلّغ",""],
-["ت","ما الخطوة التي نفعلها قبل مشاركة أي خبر؟","التحقق",""],
-["ج","ماذا يُسمّى الفعل الذي يُرتكب باستخدام الحاسب أو الشبكة بالمخالفة لأحكام النظام؟","جريمة معلوماتية","تعريف الجريمة المعلوماتية في المادة الأولى من النظام."],
-["ح","ما الذي يشدّد النظام العقوبة من أجله حين يُغرَّر بالقُصَّر؟","حمايتهم","المادة الثامنة: لا تقل العقوبة عن نصف حدها الأعلى عند التغرير بالقُصَّر واستغلالهم."],
-["خ","ما اسم الأسلوب الذي يُظهر فيه المخادع خلاف ما يُبطن؟","خداع",""],
-["د","ما الذي تقدمه هيئة الاتصالات وتقنية المعلومات للجهات الأمنية في ضبط هذه الجرائم؟","دعم فني","المادة الرابعة عشرة: الدعم والمساندة الفنية."],
-["ر","ما اسم الأثر الذي يمنع الناس من ارتكاب الجريمة خوفاً من العقوبة؟","رادع",""],
-["ز","ما صفة الصورة التي تبدو حقيقية وهي مصنوعة بالذكاء الاصطناعي؟","زائفة",""],
-["س","ما الذي يطلب منك المستدرِج أن تكتمه ولا تخبر به أحداً؟","سر",""],
-["ش","ما اسم الارتباط بين أكثر من حاسب آلي لتبادل البيانات؟","شبكة معلوماتية","تعريف الشبكة المعلوماتية في المادة الأولى."],
-["ص","ما اسم هذه المنصة؟","صون",""],
-["ض","ما الذي يلحقه المحتوى المضلِّل والتشهير بالآخرين؟","ضرر","المادة الثالثة تعاقب على التشهير وإلحاق الضرر بالآخرين."],
-["ط","من الفئة التي يبدأ بها مسار «سفير صون» في الأكاديمية؟","طلبة",""],
-["ع","ما اسم حالة الانقطاع عن الأسرة التي يسعى إليها المستدرِج؟","العزل",""],
-["غ","ما اسم من يحادثك في اللعبة دون أن تعرف حقيقته؟","غريب",""],
-["ف","ما اسم المجال الذي تقع فيه هذه الأخطار الحديثة؟","الفضاء الرقمي",""],
-["ق","من الفئة التي يشدّد النظام العقوبة عند التغرير بها واستغلالها؟","القُصَّر","المادة الثامنة."],
-["ك","ما العبارة التي تتفق عليها الأسرة لتُقال عند الشك في أي رسالة؟","كلمة سر",""],
-["ل","ما اسم اللعبة الأسرية الأولى في هذه المنصة؟","لمّة صون",""],
-["م","ما الجزاء الذي يجوز للمحكمة الحكم به على الأجهزة والأموال المتحصَّلة من الجريمة؟","مصادرة","المادة الثالثة عشرة تجيز المصادرة مع عدم الإخلال بحقوق حسني النية."],
-["ن","ما الفعل الذي يحوّل المتلقي إلى ناقل للمحتوى دون تحقق؟","نشر",""],
-["ه","ما الجهة التي تتولى التحقيق والادعاء في الجرائم الواردة في النظام؟","هيئة التحقيق والادعاء العام","المادة الخامسة عشرة."],
-["و","من الشخص الذي تُخبره أولاً حين يريبك أمر في الفضاء الرقمي؟","وليّ الأمر",""],
-["ي","ما الذي تحتاجه قبل تصديق الخبر بدلاً من الظن؟","يقين",""]];
-(function(){const root=$("#kg");let B=[],T=["فريق الوعي","فريق الحماية"],turn=0,sel=-1,won=-1,rev=false,wp=new Set();
-const nb=i=>{const r=i/5|0,c=i%5,o=[];const add=(rr,cc)=>{if(rr>=0&&rr<5&&cc>=0&&cc<5)o.push(rr*5+cc)};add(r,c-1);add(r,c+1);
-if(r%2==0){add(r-1,c-1);add(r-1,c);add(r+1,c-1);add(r+1,c)}else{add(r-1,c);add(r-1,c+1);add(r+1,c);add(r+1,c+1)}return o};
-function pathWin(t){const st=[],prev={};for(let i=0;i<25;i++){const r=i/5|0,c=i%5;if(B[i].o===t&&(t==0?c==0:r==0)){st.push(i);prev[i]=-1}}
-while(st.length){const i=st.pop(),r=i/5|0,c=i%5;if(t==0?c==4:r==4){const p=[];let k=i;while(k>=0){p.push(k);k=prev[k]}return p}
-nb(i).forEach(j=>{if(B[j].o===t&&!(j in prev)){prev[j]=i;st.push(j)}})}return null}
-function setup(){root.innerHTML='<div class="gg"><div><h3 style="margin-top:0">من يلعب؟</h3><p style="opacity:.9">اكتبوا اسم كل فريق، ويحتاج الأمر إلى شخص يقرأ الأسئلة ويحكم على الإجابات.</p><div class="gi"><input id="k0" maxlength="14" placeholder="فريق الوعي"><input id="k1" maxlength="14" placeholder="فريق الحماية"></div><button class="btn" id="ks">ابدؤوا اللعب</button></div><div class="gs"><b>طريقة اللعب</b><ul style="padding-inline-start:18px;margin:8px 0 0"><li>اختار الفريق حرفاً من القفل، فيُطرح سؤال إجابته تبدأ بهذا الحرف.</li><li>الإجابة الصحيحة تُلوّن الخلية بلون الفريق، والخاطئة تمرّر الدور.</li><li>فريق الوعي (لون أرجواني) يصل جانبَي القفل الأيمن والأيسر، وفريق الحماية (لون بيج) يصل الأعلى بالأسفل.</li><li>من يكمل الوصل أولاً يفتح القفل.</li></ul></div></div>';
-$("#ks").onclick=()=>{T=[$("#k0").value.trim()||"فريق الوعي",$("#k1").value.trim()||"فريق الحماية"];B=shuf(LK).map(x=>({l:x[0],q:x[1],a:x[2],n:x[3],o:-1}));turn=0;sel=-1;won=-1;rev=false;wp=new Set();draw()}}
-function draw(){root.innerHTML="";const w=document.createElement("div");w.className="kw";
-const kt=document.createElement("div");kt.className="kt";T.forEach((n,t)=>{const sp=document.createElement("span");if(won<0&&turn===t)sp.className="me";const d=document.createElement("i");d.style.background=t?"var(--cb)":"var(--ca)";const x=document.createElement("b");x.textContent=n+" · "+B.filter(z=>z.o===t).length;sp.append(d,x);kt.appendChild(sp)});w.appendChild(kt);
+const LKQ=[
+["أ","w","ما اسم الأسلوب الذي يكسب فيه المخادع ثقة المراهق ثم يعزله عن أسرته؟","استدراج|الاستدراج",""],
+["أ","f","من أقرب جهة يلجأ إليها الطفل عند الخطر قبل أي أحد؟","أسرته|الأسرة|أهله|اهلي|أسرتي",""],
+["ب","w","ما الفعل المسؤول عند رؤية محتوى مخالف بدلاً من نشره؟","بلّغ|بلغ|أبلغ|بلاغ",""],
+["ب","n","ما نوع البيانات المتعلقة بحسابك لدى المصرف، ويعاقب النظام على الوصول غير المشروع إليها؟","بيانات بنكية|بنكية|البيانات البنكية","المادة الرابعة: الوصول دون مسوغ نظامي إلى بيانات بنكية أو ائتمانية."],
+["ت","w","ما الخطوة التي نفعلها قبل مشاركة أي خبر؟","تحقق|التحقق|أتحقق",""],
+["ت","n","ما الجريمة التي تعني الإساءة إلى سمعة الآخرين بوسائل تقنية المعلومات؟","تشهير|التشهير","المادة الثالثة: التشهير بالآخرين وإلحاق الضرر بهم عبر وسائل تقنيات المعلومات."],
+["ج","n","ماذا يُسمّى الفعل الذي يُرتكب باستخدام الحاسب أو الشبكة بالمخالفة لأحكام النظام؟","جريمة معلوماتية|الجريمة المعلوماتية|جريمة","المادة الأولى: تعريف الجريمة المعلوماتية."],
+["ج","n","ما الاسم العام لما يقع على مرتكب الجريمة من سجن أو غرامة؟","جزاء|الجزاء","وردت العقوبات في المواد من الثالثة إلى السابعة."],
+["ح","n","ما الذي يشدّد النظام العقوبة من أجله حين يُغرَّر بالقُصَّر؟","حمايتهم|الحماية|حماية","المادة الثامنة: لا تقل العقوبة عن نصف حدها الأعلى عند التغرير بالقُصَّر واستغلالهم."],
+["ح","w","ما الصفة التي يتحلى بها من يشك في الغريب ويتجنب الاستجابة له؟","حذر|الحذر|حذرا",""],
+["خ","w","ما اسم الأسلوب الذي يُظهر فيه المخادع خلاف ما يُبطن؟","خداع|الخداع|خديعة",""],
+["خ","d","ما صفة المعلومة المخالفة للحقيقة؟","خاطئة|خاطئ|خطأ",""],
+["د","n","ما الذي تقدمه هيئة الاتصالات وتقنية المعلومات للجهات الأمنية في ضبط هذه الجرائم؟","دعم فني|الدعم الفني|دعم|الدعم","المادة الرابعة عشرة: الدعم والمساندة الفنية للجهات الأمنية."],
+["د","d","ما اسم المحادثة المباشرة بين شخصين في التطبيقات؟","دردشة|الدردشة",""],
+["ر","n","ما اسم الأثر الذي يمنع الناس من الجريمة خوفاً من العقوبة؟","رادع|الردع|ردع",""],
+["ر","d","ما اسم ما يصلك عبر التطبيقات وقد يحمل طلباً مريباً من غريب؟","رسالة|الرسالة",""],
+["ز","d","ما صفة الصورة التي تبدو حقيقية وهي مصنوعة بالذكاء الاصطناعي؟","زائفة|زائف",""],
+["ز","f","من الذي يشاركك مقعد الدراسة وقد تلاحظ عليه علامات العزلة؟","زميل|الزميل|زميلي",""],
+["س","w","ما الذي يطلب منك المستدرِج أن تكتمه ولا تخبر به أحداً؟","سر|السر",""],
+["س","n","ما اسم العقوبة التي تقيّد الحرية وتُقرَّر في مواد النظام بمدد محددة؟","سجن|السجن","المواد من الثالثة إلى السابعة تحدد أقصى مدد السجن."],
+["ش","n","ما اسم الارتباط بين أكثر من حاسب آلي لتبادل البيانات؟","شبكة معلوماتية|الشبكة المعلوماتية|شبكة","المادة الأولى: تعريف الشبكة المعلوماتية."],
+["ش","w","ما اسم من يرى المحتوى المخالف ويُدلي بما رأى أمام الجهة المختصة؟","شاهد|الشاهد",""],
+["ص","w","ما اسم هذه المنصة؟","صون",""],
+["ص","w","ما الذي نلتقطه لشاشة الهاتف لتوثيق المحادثة المريبة؟","صورة|صورة الشاشة|صورة للشاشة",""],
+["ض","n","ما الذي يلحقه التشهير والمحتوى المضلِّل بالآخرين؟","ضرر|الضرر","المادة الثالثة: التشهير وإلحاق الضرر بالآخرين."],
+["ض","n","ما اسم من يقع عليه الأذى من جريمة التشهير؟","ضحية|الضحية",""],
+["ط","w","من الفئة التي يبدأ بها مسار «سفير صون» في الأكاديمية؟","طلبة|طلاب|الطلبة|الطلاب",""],
+["ط","f","ما الشعور الذي ينبغي أن يسود الأسرة حين يخبرها الابن بما حدث بدلاً من العقاب؟","طمأنينة|الطمأنينة",""],
+["ع","w","ما اسم حالة الانقطاع عن الأسرة التي يسعى إليها المستدرِج؟","عزلة|العزل|العزلة|عزل",""],
+["ع","n","ما الاسم العام للجزاء الذي ينص عليه النظام على كل جريمة؟","عقوبة|العقوبة|العقوبات",""],
+["غ","w","ما اسم من يحادثك في اللعبة دون أن تعرف حقيقته؟","غريب|الغريب",""],
+["غ","n","ما الجزاء المالي الذي يُحكم به إلى جانب السجن أو بدلاً منه؟","غرامة|الغرامة","تتفاوت الغرامة القصوى بين خمسمائة ألف وخمسة ملايين ريال بحسب المادة."],
+["ف","d","ما اسم المجال الذي تقع فيه هذه الأخطار الحديثة؟","الفضاء الرقمي|فضاء رقمي|الفضاء السيبراني|فضاء",""],
+["ف","d","ما الاسم الدارج للمقطع المصوَّر المنتشر على المنصات؟","فيديو|الفيديو",""],
+["ق","n","من الفئة التي يشدّد النظام العقوبة عند التغرير بها واستغلالها؟","القصر|قصر|القاصرين|قاصر","المادة الثامنة."],
+["ق","n","من الذي يفصل في القضايا ويصدر الأحكام؟","قاضي|القاضي|قاض",""],
+["ك","f","ما العبارة التي تتفق عليها الأسرة لتُقال عند الشك في أي رسالة؟","كلمة سر|كلمة السر|كلمة",""],
+["ك","d","ما الاسم الآخر الشائع للحاسب الآلي؟","كمبيوتر|الكمبيوتر",""],
+["ل","f","ما اسم اللعبة الأسرية الأولى في هذه المنصة؟","لمة صون|لمّة صون|لمة",""],
+["ل","d","ما الاسم العام للتطبيق التفاعلي الذي يجتمع فيه اللاعبون ويستغله بعض المستدرجين؟","لعبة|اللعبة|لعبة إلكترونية",""],
+["م","n","ما الجزاء الذي يجوز للمحكمة الحكم به على الأجهزة والأموال المتحصَّلة من الجريمة؟","مصادرة|المصادرة","المادة الثالثة عشرة تجيز المصادرة مع عدم الإخلال بحقوق حسني النية."],
+["م","w","ما اسم من يعلّم الطلبة في المدرسة ويُؤهَّل في الأكاديمية ليكون مرشداً؟","معلم|المعلم|معلمين",""],
+["ن","d","ما الفعل الذي يحوّل المتلقي إلى ناقل للمحتوى دون تحقق؟","نشر|النشر|إعادة النشر",""],
+["ن","n","ما اسم الوثيقة القانونية التي نعرض مواد منها في هذه اللعبة؟","نظام مكافحة جرائم المعلوماتية|النظام|نظام",""],
+["ه","n","ما الجهة التي تتولى التحقيق والادعاء في الجرائم الواردة في النظام؟","هيئة التحقيق والادعاء العام|هيئة التحقيق|هيئة","المادة الخامسة عشرة."],
+["ه","d","ما الجهاز الذي يحمله المراهق ويستخدم به التطبيقات غالباً؟","هاتف|الهاتف|الهاتف المحمول",""],
+["و","f","من الشخص الذي تُخبره أولاً حين يريبك أمر في الفضاء الرقمي؟","ولي الأمر|ولي أمري|وليّ الأمر|والدي",""],
+["و","w","ما اسم القدرة على إدراك الحقيقة وكشف الخداع؟","وعي|الوعي",""],
+["ي","w","ما الذي تحتاجه قبل تصديق الخبر بدلاً من الظن؟","يقين|اليقين",""],
+["ي","d","ما العضو الذي قد تبدو تفاصيله غير طبيعية في الصور المولَّدة؟","اليد|يد|اليدين",""]];
+(function(){const root=$("#kg"),CAT={w:["وقاية","#a58fc9"],n:["نظام","#dbd0ca"],d:["رقمي","#7fb7d6"],f:["أسرة","#e0a3b8"]};
+const cfg={rounds:1,mode:"judge",tm:30,snd:1,n0:"",n1:""};try{Object.assign(cfg,JSON.parse(localStorage.getItem("sawnLock")||"{}"))}catch(e){}
+const save=()=>{try{localStorage.setItem("sawnLock",JSON.stringify(cfg))}catch(e){}};
+const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+let AC=null;function tone(q){if(!cfg.snd)return;try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();let t=AC.currentTime;q.forEach(([f,d,ty])=>{const o=AC.createOscillator(),g=AC.createGain();o.type=ty||"sine";o.frequency.value=f;g.gain.setValueAtTime(.12,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+d);t+=d*.85})}catch(e){}}
+function confetti(){const c=el("div","cf");for(let i=0;i<46;i++){const x=el("i");x.style.left=Math.random()*100+"%";x.style.background=["#a58fc9","#dbd0ca","#7fb7d6","#e0a3b8","#fff"][i%5];x.style.animationDelay=Math.random()*.8+"s";x.style.transform="rotate("+Math.random()*180+"deg)";c.appendChild(x)}document.body.appendChild(c);setTimeout(()=>c.remove(),4200)}
+const nz=t=>NZ(t).replace(/[^\u0621-\u064A\s]/g,"").replace(/(^|\s)ال/g,"$1").replace(/\s+/g," ").trim();
+const okAns=(v,alts)=>{const i=nz(v);if(!i)return false;return alts.some(a=>{const x=nz(a);return i===x||(x.length>=3&&i.includes(x))||(i.length>=3&&x.includes(i)&&i.length>=x.length*.6)})};
+const LET=[...new Set(LKQ.map(x=>x[0]))];
+let T=[],turn=0,B=[],sel=-1,ph="pick",at=0,steal=false,res=null,won=-1,wp=new Set(),last=-1,timer=null,left=0,shown=false,hintOn=false,kv="";
+const nb=i=>{const r=i/5|0,c=i%5,o=[];const add=(a,b)=>{if(a>=0&&a<5&&b>=0&&b<5)o.push(a*5+b)};add(r,c-1);add(r,c+1);if(r%2==0){add(r-1,c-1);add(r-1,c);add(r+1,c-1);add(r+1,c)}else{add(r-1,c);add(r-1,c+1);add(r+1,c);add(r+1,c+1)}return o};
+function pathWin(t){const st=[],prev={};for(let i=0;i<25;i++){const r=i/5|0,c=i%5;if(B[i].o===t&&(t==0?c==0:r==0)){st.push(i);prev[i]=-1}}while(st.length){const i=st.pop(),r=i/5|0,c=i%5;if(t==0?c==4:r==4){const p=[];let k=i;while(k>=0){p.push(k);k=prev[k]}return p}nb(i).forEach(j=>{if(B[j].o===t&&!(j in prev)){prev[j]=i;st.push(j)}})}return null}
+const Q=()=>{const c=B[sel],q=c.qs[c.qi];return{cat:q[1],q:q[2],a:q[3].split("|"),n:q[4]}};
+function stopT(){clearInterval(timer);timer=null}
+function tick(){const b=root.querySelector("#tbi"),t=root.querySelector("#tbt");if(!b)return;b.style.width=Math.max(0,left/cfg.tm*100)+"%";b.style.background=left<=8?"#ff8a73":"var(--gold2)";t.textContent=Math.ceil(Math.max(0,left))+" ث"}
+function startT(){stopT();if(!cfg.tm)return;left=cfg.tm;timer=setInterval(()=>{left-=.25;tick();if(left<=0){stopT();finish(false,"انتهى الوقت")}},250)}
+function seg(lbl,key,opts){const w=el("div");w.appendChild(el("div","sl",lbl));const d=el("div","seg");opts.forEach(([v,t])=>{const b=el("button",cfg[key]===v?"on":"",t);b.onclick=()=>{cfg[key]=v;[...d.children].forEach(x=>x.classList.remove("on"));b.classList.add("on")};d.appendChild(b)});w.appendChild(d);return w}
+function setup(){stopT();root.innerHTML="";const g=el("div","gg"),a=el("div");a.appendChild(el("h3",null,"إعداد المباراة"));a.firstChild.style.marginTop="0";
+const gi=el("div","gi"),i0=el("input"),i1=el("input");i0.placeholder="فريق الوعي";i1.placeholder="فريق الحماية";i0.value=cfg.n0;i1.value=cfg.n1;i0.maxLength=i1.maxLength=14;gi.append(i0,i1);a.appendChild(gi);
+a.append(seg("عدد الجولات","rounds",[[1,"جولة واحدة"],[3,"أفضل من ٣"]]),seg("طريقة الحكم","mode",[["judge","حَكَم بشري"],["type","كتابة الإجابة"]]),seg("وقت السؤال","tm",[[30,"٣٠ ثانية"],[60,"٦٠ ثانية"],[0,"بلا وقت"]]),seg("الصوت","snd",[[1,"تشغيل"],[0,"إيقاف"]]));
+const b=el("button","btn","ابدؤوا اللعب");b.style.marginTop="20px";b.onclick=()=>{cfg.n0=i0.value.trim();cfg.n1=i1.value.trim();save();T=[{n:cfg.n0||"فريق الوعي",w:0,h:1,s:1},{n:cfg.n1||"فريق الحماية",w:0,h:1,s:1}];tone([[523,.1],[659,.1]]);newRound(0)};a.appendChild(b);
+const r=el("div","gs");r.innerHTML="<b>طريقة اللعب</b><ul style='padding-inline-start:18px;margin:8px 0 0'><li>يختار الفريق حرفاً فيُطرح سؤال إجابته تبدأ بذلك الحرف.</li><li>الإجابة الصحيحة تُلوّن الخلية، والخاطئة تمنح الفريق الآخر <b>فرصة سرقة</b> الخلية.</li><li>لكل فريق تلميح واحد وتبديل واحد للسؤال في المباراة، وخلية المفتاح في الوسط تمنح تلميحاً إضافياً.</li><li>فريق الوعي يصل يمين القفل بيساره، وفريق الحماية يصل أعلاه بأسفله، ومن يُكمل أولاً يفتح القفل.</li><li>وضع «كتابة الإجابة» يتحقق من الإجابة تلقائياً، ويمكن للحَكَم الاعتراض.</li></ul>";
+g.append(a,r);root.appendChild(g)}
+function newRound(first){B=shuf(LET).map(l=>({l,qs:shuf(LKQ.filter(x=>x[0]===l)),qi:0,o:-1}));turn=first;sel=-1;ph="pick";won=-1;wp=new Set();last=-1;draw()}
+function pick(i){if(ph!=="pick"||B[i].o>=0)return;sel=i;ph="ask";at=turn;steal=false;shown=false;hintOn=false;kv="";startT();tone([[440,.08]]);draw();root.querySelector(".kp").scrollIntoView({block:"nearest",behavior:"smooth"})}
+function finish(ok,msg){stopT();const v=root.querySelector("#ai");res={ok,msg:msg||"",user:v?v.value:kv};ph="res";tone(ok?[[660,.12],[880,.18]]:[[220,.25,"sawtooth"]]);draw()}
+function claim(){B[sel].o=at;last=sel;if(sel===12)T[at].h++;const p=pathWin(at);if(p){won=at;wp=new Set(p);T[at].w++;ph="win";tone([[523,.12],[659,.12],[784,.12],[1047,.3]]);confetti()}else{turn=1-turn;sel=-1;ph="pick"}draw()}
+function draw(){const w=el("div","kw"),kt=el("div","kt");const hl=ph==="ask"||ph==="res"?at:turn;
+T.forEach((t,i)=>{const sp=el("span",won<0&&hl===i?"me":""),d=el("i");d.style.background=i?"var(--cb)":"var(--ca)";const x=el("b",null,t.n+" · "+B.filter(z=>z.o===i).length+(cfg.rounds>1?" · 🔓"+t.w:""));sp.append(d,x);kt.appendChild(sp)});
+const mu=el("button","btn ghost",cfg.snd?"🔊":"🔇");mu.style.cssText="padding:6px 14px;color:#fff";mu.onclick=()=>{cfg.snd=cfg.snd?0:1;save();draw()};kt.appendChild(mu);w.appendChild(kt);
 w.insertAdjacentHTML("beforeend",'<svg class="shk'+(won>=0?" open":"")+'" viewBox="0 0 200 100"><path d="M48 100V52a52 52 0 0 1 104 0v48" fill="none" stroke="#dbd0ca" stroke-width="17" stroke-linecap="round"/></svg>');
-const lb=document.createElement("div");lb.className="lbody";
-for(let r=0;r<5;r++){const row=document.createElement("div");row.className="brow"+(r%2?" o":"");for(let c=0;c<5;c++){const i=r*5+c,x=B[i],b=document.createElement("button");b.className="kc"+(x.o>=0?(x.o?" b":" a"):"")+(i===sel?" sel":"")+(wp.has(i)?" w":"");b.textContent=x.l=="ه"?"هـ":x.l;b.disabled=x.o>=0||won>=0||sel>=0;b.onclick=()=>{sel=i;rev=false;draw()};row.appendChild(b)}lb.appendChild(row)}
-w.appendChild(lb);
-const pn=document.createElement("div");pn.className="gc kp";
-if(won>=0){pn.innerHTML="<div style='text-align:center'><div class='win'>🔓</div><h3 style='margin:6px 0'></h3><p style='opacity:.9;margin:0'>فُتح القفل بالمعرفة. اجلسوا الآن وتحدثوا: ما أهم ما تعلمتموه؟</p></div>";pn.querySelector("h3").textContent="فاز "+T[won];const bt=document.createElement("button");bt.className="btn";bt.textContent="لعبة جديدة";bt.style.marginTop="14px";bt.onclick=setup;pn.firstChild.appendChild(bt)}
-else if(sel<0){const h=document.createElement("h3");h.style.margin="0";h.textContent="دور "+T[turn]+": اختاروا حرفاً من القفل";pn.appendChild(h)}
-else{const x=B[sel],h=document.createElement("h3");h.style.marginTop="0";h.textContent=T[turn]+" · حرف «"+x.l+"»";const q=document.createElement("p");q.style.fontSize="1.15rem";q.textContent=x.q;pn.append(h,q);
-if(!rev){const b=document.createElement("button");b.className="btn";b.textContent="أظهر الإجابة";b.onclick=()=>{rev=true;draw()};pn.appendChild(b)}
-else{const d=document.createElement("div");d.className="gd";const a=document.createElement("b");a.textContent="الإجابة: "+x.a;d.appendChild(a);if(x.n){const e=document.createElement("span");e.textContent=x.n;d.appendChild(e)}pn.appendChild(d);
-const r=document.createElement("div");r.className="row";const ok=document.createElement("button");ok.className="btn";ok.textContent="إجابة صحيحة ✓";ok.onclick=()=>{x.o=turn;const p=pathWin(turn);sel=-1;rev=false;if(p){won=turn;wp=new Set(p)}else turn=1-turn;draw()};
-const no=document.createElement("button");no.className="btn ghost";no.textContent="إجابة خاطئة ✗";no.onclick=()=>{turn=1-turn;sel=-1;rev=false;draw()};r.append(ok,no);pn.appendChild(r)}}
-w.appendChild(pn);root.appendChild(w)}
+const lb=el("div","lbody");for(let r=0;r<5;r++){const row=el("div","brow"+(r%2?" o":""));for(let c=0;c<5;c++){const i=r*5+c,x=B[i],b=el("button","kc"+(x.o>=0?(x.o?" b":" a"):"")+(i===sel?" sel":"")+(wp.has(i)?" w":"")+(i===last?" new":""));b.textContent=i===12&&x.o<0?"🔑":(x.l=="ه"?"هـ":x.l);b.disabled=!(ph==="pick"&&x.o<0);b.onclick=()=>pick(i);row.appendChild(b)}lb.appendChild(row)}w.appendChild(lb);
+const lg=el("p","lg");lg.innerHTML="<i style='background:var(--ca)'></i>"+"<span></span>"+" · <i style='background:var(--cb)'></i><span></span>";lg.children[1].textContent=T[0].n+": يمين القفل ← يساره";lg.children[3].textContent=T[1].n+": الأعلى ← الأسفل";w.appendChild(lg);
+const pn=el("div","gc kp");
+if(ph==="pick"){const h=el("h3",null,"دور "+T[turn].n+": اختاروا حرفاً من القفل");h.style.margin="0";pn.appendChild(h)}
+else if(ph==="ask"){const x=Q(),h=el("h3",null,T[at].n+" · حرف «"+(B[sel].l=="ه"?"هـ":B[sel].l)+"»"+(steal?" · فرصة سرقة":""));h.style.marginTop="0";const ch=el("span","chip",CAT[x.cat][0]);ch.style.background=CAT[x.cat][1];h.appendChild(ch);pn.append(h,el("p",null,x.q));pn.lastChild.style.fontSize="1.15rem";
+if(cfg.tm){const tb=el("div","tb");tb.innerHTML="<i id='tbi'></i>";pn.appendChild(tb);const tt=el("div",null,"");tt.id="tbt";tt.style.cssText="font-size:.85rem;opacity:.85;margin-top:-4px";pn.appendChild(tt)}
+if(hintOn){const a0=nz(x.a[0]);pn.appendChild(el("div","hint","تلميح: تبدأ الإجابة بـ «"+a0.slice(0,2)+"…» وتتكون من "+a0.split(" ").length+" كلمة"))}
+const r=el("div","row");r.style.marginTop="4px";const h2=el("button","btn ghost","💡 تلميح ("+T[at].h+")");h2.style.color="#fff";h2.disabled=T[at].h<1||hintOn;h2.onclick=()=>{const v=root.querySelector("#ai");kv=v?v.value:"";T[at].h--;hintOn=true;draw();const n=root.querySelector("#ai");if(n)n.value=kv};
+const sw=el("button","btn ghost","🔄 تبديل ("+T[at].s+")");sw.style.color="#fff";sw.disabled=T[at].s<1||B[sel].qs.length<2;sw.onclick=()=>{T[at].s--;B[sel].qi=(B[sel].qi+1)%B[sel].qs.length;hintOn=false;shown=false;kv="";startT();draw()};r.append(h2,sw);pn.appendChild(r);
+if(cfg.mode==="type"){const inp=el("input","ai");inp.id="ai";inp.placeholder="اكتبوا الإجابة هنا";const go=()=>finish(okAns(inp.value,x.a));inp.onkeydown=e=>{if(e.key==="Enter")go()};pn.appendChild(inp);const r2=el("div","row"),ok=el("button","btn","تحقق");ok.onclick=go;const sk=el("button","btn ghost","لا نعرف");sk.style.color="#fff";sk.onclick=()=>finish(false,"");r2.append(ok,sk);pn.appendChild(r2);setTimeout(()=>inp.focus({preventScroll:true}),60)}
+else if(!shown){const b=el("button","btn","أظهر الإجابة");b.style.marginTop="12px";b.onclick=()=>{stopT();shown=true;draw()};pn.appendChild(b)}
+else{const d=el("div","gd");d.appendChild(el("b",null,"الإجابة: "+x.a[0]));pn.appendChild(d);const r2=el("div","row"),ok=el("button","btn","إجابة صحيحة ✓");ok.onclick=()=>finish(true);const no=el("button","btn ghost","إجابة خاطئة ✗");no.style.color="#fff";no.onclick=()=>finish(false);r2.append(ok,no);pn.appendChild(r2)}}
+else if(ph==="res"){const x=Q(),h=el("h3",null,res.ok?"✓ إجابة صحيحة":"✗ "+(res.msg||"إجابة غير صحيحة"));h.style.marginTop="0";pn.appendChild(h);const d=el("div","gd");d.appendChild(el("b",null,"الإجابة النموذجية: "+x.a[0]));if(res.user&&!res.ok){d.appendChild(el("span",null,"إجابتكم: "+res.user))}if(x.n)d.appendChild(el("span",null,x.n));pn.appendChild(d);
+if(res.ok&&sel===12){pn.appendChild(el("p",null,"🔑 خلية المفتاح: ربحتم تلميحاً إضافياً."))}
+const r=el("div","row");r.style.marginTop="14px";
+if(res.ok){const n=el("button","btn","التالي");n.onclick=claim;r.appendChild(n)}
+else{const ov=el("button","btn","احتساب الإجابة صحيحة");ov.onclick=claim;r.appendChild(ov);
+if(!steal){const st=el("button","btn ghost","فرصة للفريق الآخر");st.style.color="#fff";st.onclick=()=>{steal=true;at=1-turn;ph="ask";shown=false;hintOn=false;kv="";startT();draw()};r.appendChild(st)}
+else{const n=el("button","btn ghost","التالي");n.style.color="#fff";n.onclick=()=>{turn=1-turn;sel=-1;ph="pick";draw()};r.appendChild(n)}}
+pn.appendChild(r)}
+else if(ph==="win"){const fin=T[won].w>=(cfg.rounds>1?2:1),c=el("div");c.style.textAlign="center";c.appendChild(el("div","win","🔓"));const h=el("h3",null,(fin?"🏆 فاز بالمباراة: ":"فاز بالجولة: ")+T[won].n);h.style.margin="6px 0";c.appendChild(h);c.appendChild(el("p",null,"فُتح القفل بالمعرفة. اجلسوا الآن وتحدثوا: ما أهم ما تعلمتموه؟"));
+const b=el("button","btn",fin?"مباراة جديدة":"الجولة التالية");b.onclick=()=>fin?setup():newRound(1-won);c.appendChild(b);pn.appendChild(c)}
+w.appendChild(pn);
+if(ph!=="win"){const nw=el("button","btn ghost","إنهاء المباراة");nw.style.cssText="color:#fff;font-size:.85rem;padding:6px 16px";nw.onclick=()=>{if(confirm("إنهاء المباراة والعودة للإعداد؟"))setup()};w.appendChild(nw)}
+root.innerHTML="";root.appendChild(w);if(ph==="ask")tick()}
 setup()})();
 /* القائمة */
 (function(){const nv=$("#nv"),bg=$("#bg");bg.onclick=()=>{const o=nv.classList.toggle("show");bg.setAttribute("aria-expanded",o)};
